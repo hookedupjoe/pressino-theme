@@ -1,0 +1,219 @@
+@charset "UTF-8";
+
+/*!
+Theme Wordpress Widget CSS
+*/
+
+/* Formatting to help out of ox widgets look better */
+
+.wp-block-quote {
+  padding: 10px;
+}
+
+.wp-block-code {
+  border: solid 2px #222222;
+  padding: 5px;
+}
+
+.wp-block-details summary {
+  padding:8px;
+  margin-top:4px;
+  margin-bottom:4px;
+}
+
+.wp-block-pullquote {
+  padding:18px;
+}
+
+
+.wp-block-pullquote blockquote {
+  padding:8px;
+  border-top: solid 2px #222222;
+  border-bottom: solid 2px #222222;
+}
+
+.wp-block-verse {
+  padding:8px;
+  border: solid 2px #222222;
+}
+
+
+.wp-block-columns.is-layout-flex {
+  gap: 5px;
+}
+
+
+
+ul.wp-block-list {
+  padding-left: 20px;
+  margin-top: 2px;
+}
+
+
+@media only screen and (max-width: 767px) {
+  .wp-block-media-text__content {
+    margin-top:10px;
+  }
+}
+
+/* Themed Button Elements */
+
+
+.theme-red.light .wp-element-button {
+	background-color: #DB2828;
+}
+
+.theme-orange.light .wp-element-button {
+	background-color: #F2711C;
+}
+
+.theme-olive.light .wp-element-button {
+	background-color: #B5CC18;
+}
+
+.theme-yellow.light .wp-element-button {
+	background-color: #FBBD08;
+}
+
+.theme-green.light .wp-element-button {
+	background-color: #21BA45;
+}
+
+.theme-teal.light .wp-element-button {
+	background-color: #00B5AD;
+}
+
+.theme-blue.light .wp-element-button {
+	background-color: #2185D0;
+}
+
+.theme-violet.light .wp-element-button {
+	background-color: #6435C9;
+}
+
+.theme-purple.light .wp-element-button {
+	background-color: #A333C8;
+}
+
+.theme-pink.light .wp-element-button {
+	background-color: #E03997;
+}
+
+.theme-brown.light .wp-element-button {
+	background-color: #A5673F;
+}
+
+.theme-grey.light .wp-element-button {
+	background-color: #767676;
+}
+
+.theme-white.light .wp-element-button {
+	background-color: black;
+}
+
+
+
+/* Themed Quote */
+
+.theme-red.light .wp-block-quote, .theme-red.light .wp-block-pullquote blockquote {
+  border-color: #DB2828;
+}
+
+.theme-orange.light .wp-block-quote, .theme-orange.light .wp-block-pullquote blockquote {
+  border-color: #F2711C;
+}
+
+.theme-olive.light .wp-block-quote, .theme-olive.light .wp-block-pullquote blockquote {
+  border-color: #B5CC18;
+}
+
+.theme-yellow.light .wp-block-quote, .theme-yellow.light .wp-block-pullquote blockquote {
+  border-color: #FBBD08;
+}
+
+.theme-green.light .wp-block-quote, .theme-green.light .wp-block-pullquote blockquote {
+  border-color: #21BA45;
+}
+
+.theme-teal.light .wp-block-quote, .theme-teal.light .wp-block-pullquote blockquote {
+  border-color: #00B5AD;
+}
+
+.theme-blue.light .wp-block-quote, .theme-blue.light .wp-block-pullquote blockquote {
+  border-color: #2185D0;
+}
+
+.theme-violet.light .wp-block-quote, .theme-violet.light .wp-block-pullquote blockquote {
+  border-color: #6435C9;
+}
+
+.theme-purple.light .wp-block-quote, .theme-purple.light .wp-block-pullquote blockquote {
+  border-color: #A333C8;
+}
+
+.theme-pink.light .wp-block-quote, .theme-pink.light .wp-block-pullquote blockquote {
+  border-color: #E03997;
+}
+
+.theme-brown.light .wp-block-quote, .theme-brown.light .wp-block-pullquote blockquote {
+  border-color: #A5673F;
+}
+
+.theme-grey.light .wp-block-quote, .theme-grey.light .wp-block-pullquote blockquote {
+  border-color: #767676;
+}
+
+.theme-white.light .wp-block-quote, .theme-white.light .wp-block-pullquote blockquote {
+  border-color: white;
+}
+
+
+
+
+
+/* added custom stuff */
+
+
+ul.actapp-list {
+  list-style-type: none;
+	margin:0;
+	padding:0;
+}
+
+.actapp-list li {
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-bottom: solid 1px black;
+}
+
+.actapp-list li:last-child {
+    border-bottom: none;
+}
+
+
+ul.separated {
+  border-top: solid 2px black;
+  border-bottom: solid 2px black;
+}
+
+.actappui.ui.header, .actappui.ui.message, .actappui.ui.message.inverted, .actappui.ui.header.inverted {
+  padding: 8px;
+}
+
+figure.wp-block-video {
+  padding:4px;
+  border:solid 1px #aaaaaa;
+}
+
+.actappeditor-icon {
+  width: 25px;
+  height: 25px;
+}
+.actappeditor-icon.right {
+  margin-right: 3px;
+  float:right;
+}
+.actappeditor-icon.left {
+  margin-left: 3px;
+  float:left;
+}

@@ -1,0 +1,562 @@
+@charset "UTF-8";
+
+/*!
+Theme Name: Pressino Theme
+Theme URI: https://wp.actionapp.hookedup.com/
+(c) 2020-2024 - hookedup, inc.
+Author: hookedup, inc.
+Author URI: https://hookedup.com/
+Description: Description: A theme for Pressino / Action App based websites.
+
+Version: 2.0.1
+Tested up to: 6.0
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: pressinotheme
+Tags: pressino, wordpress development, blocks, action-app, actionapp-wp, semantic ui, semantic, 
+
+This theme, like WordPress, is licensed under the GPL.
+*/
+
+
+#page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+	font-family: Roboto, arial, helvetica, sans-serif;
+	font-size: 14px;
+}
+
+#page.fixedmenu {
+  margin-top:40px;
+}
+
+.ui.sidebar.overlay.pad0.left.uncover.visible {
+  background-color: black;
+}
+
+.ui.item[action] {
+  cursor: pointer;
+}
+
+#page .full-container {
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.nav-area {
+  margin-bottom:10px;
+  background-color:#1b1c1d;
+  color: white;
+}
+
+.inverted-area {
+  background-color:#1b1c1d;
+  color: white;
+}
+.page-header {
+  background-color:#1b1c1d;
+  color: white;
+}
+.page-footer {
+  margin-top:10px;
+  border-top:1px solid;
+}
+
+.page-footer .full-container {
+  padding: 10px;
+  
+}
+.ui.cards.sidecards div.image>img {
+  min-height:75px;
+}
+body.admin-bar .ui.top.fixed.menu {
+  margin-top: 30px;
+}
+body.admin-bar .ui.top.fixed.menu {
+  margin-top: 32px;
+}
+body.admin-bar.kodeo-ui-active .ui.top.fixed.menu {
+  margin-top: 42px;
+}
+
+
+.site-content {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.hgroup.full-container.container {
+  padding: 0 10px 0 10px;
+}
+
+.ui.inverted.horizontal.top.fixed.menu {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* SAE Specific */
+
+/*
+.logo-height-constrain {
+	width:250px;
+	height:auto;
+  background-color: white;
+  border-radius: 5px;
+  margin: 5px;
+  opacity: 96%;	
+}
+  */
+
+#masthead .hgroup .logo {
+    display: block;
+    max-width: 100%;
+	  padding:5px;
+}
+#masthead .hgroup a {
+    text-decoration: none;
+}
+
+#masthead .hgroup .logo img {
+    vertical-align: middle;
+}
+
+.uiheadergap {
+  height:14px;
+}
+.logo-height-constrain {
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    margin: 0px;
+}
+
+
+#masthead {
+    padding: 0 35px 0 35px;
+    -ms-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    zoom: 1;
+}
+
+#masthead {
+    background-size: cover;
+}
+#masthead {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+span#footer-thankyou {
+  display: none;
+}
+
+
+textarea.wpcf7-form-control.wpcf7-textarea.textArea {
+  width: 100%;
+}
+
+input.wpcf7-form-control.wpcf7-text.textInput {
+  width: 100%;
+}
+
+body.admin-bar header>div.site-branding {
+  margin-top: 32px;
+}
+@media screen and (max-width: 782px){
+  body.admin-bar header>div.site-branding {
+    margin-top: 32px;
+  }
+}
+
+
+
+
+
+/*  Semantic UI Theme CSS */
+
+/*--- Black ---*/
+
+.theme-black .page-header, .theme-black .page-footer {
+	background-color: black !important;
+  color: white;
+}
+theme-black .nav-area {
+	background-color: #1b1c1d !important;
+}
+
+.theme-black .page-header a, .theme-black .page-footer a{
+	color: white !important;
+}
+
+
+/*--- Red ---*/
+
+.theme-red .page-header, .theme-red .nav-area, .theme-red .page-footer {
+	background-color: #DB2828 !important;
+  color: white;
+}
+.theme-red .page-header a, .theme-red .page-footer a{
+	color: white;
+}
+.theme-red.light .page-header a, .theme-red.light .page-footer a{
+	color: #DB2828;
+}
+
+/*--- Orange ---*/
+
+.theme-orange .page-header, .theme-orange .nav-area, .theme-orange .page-footer {
+	background-color: #F2711C !important;
+	color: white;
+}
+.theme-orange.light .page-header a, .theme-orange.light .page-footer a{
+	color: #F2711C;
+}
+.theme-orange .page-header a, .theme-orange .page-footer a{
+	color: white;
+}
+
+/*--- Olive ---*/
+
+.theme-olive .page-header, .theme-olive .nav-area, .theme-olive .page-footer {
+	background-color: #B5CC18 !important;
+	color: white;
+}
+.theme-olive.light .page-header a, .theme-olive.light .page-footer a{
+	color: #8ABC1E;
+}
+.theme-olive .page-header a, .theme-olive .page-footer a{
+	color: white;
+}
+
+/*--- Yellow ---*/
+
+.theme-yellow .page-header, .theme-yellow .nav-area, .theme-yellow .page-footer {
+	background-color: #FBBD08 !important;
+	color: white;
+}
+.theme-yellow.light .page-header a, .theme-yellow.light .page-footer a{
+	color: #B58105;
+}
+.theme-yellow .page-header a, .theme-yellow .page-footer a{
+	color: white;
+}
+
+/*--- Green ---*/
+
+.theme-green .page-header, .theme-green .nav-area, .theme-green .page-footer {
+	background-color: #21BA45 !important;
+	color: white;
+}
+.theme-green.light .page-header a, .theme-green.light .page-footer a{
+	color: #21BA45;
+}
+.theme-green .page-header a, .theme-green .page-footer a{
+	color: white;
+}
+
+/*--- Teal ---*/
+
+.theme-teal .page-header, .theme-teal .nav-area, .theme-teal .page-footer {
+	background-color: #00B5AD !important;
+	color: white;
+}
+.theme-teal.light .page-header a, .theme-teal.light .page-footer a{
+	color: #10A3A3;
+}
+.theme-teal .page-header a, .theme-teal .page-footer a{
+	color: white;
+}
+
+/*--- Blue ---*/
+
+.theme-blue .page-header, .theme-blue .nav-area, .theme-blue .page-footer {
+	background-color: #2185D0 !important;
+	color: white;
+}
+.theme-blue.light .page-header a, .theme-blue.light .page-footer a{
+	color: #2185D0;
+}
+.theme-blue .page-header a, .theme-blue .page-footer a{
+	color: white;
+}
+
+/*--- Violet ---*/
+
+.theme-violet .page-header, .theme-violet .nav-area, .theme-violet .page-footer {
+	background-color: #6435C9 !important;
+	color: white;
+}
+.theme-violet.light .page-header a, .theme-violet.light .page-footer a{
+	color: #6435C9;
+}
+.theme-violet .page-header a, .theme-violet .page-footer a{
+	color: white;
+}
+
+/*--- Purple ---*/
+
+.theme-purple .page-header, .theme-purple .nav-area, .theme-purple .page-footer {
+	background-color: #A333C8 !important;
+	color: white;
+}
+.theme-purple.light .page-header a, .theme-purple.light .page-footer a{
+	color: #A333C8;
+}
+.theme-purple .page-header a, .theme-purple .page-footer a{
+	color: white;
+}
+
+/*--- Pink ---*/
+
+.theme-pink .page-header, .theme-pink .nav-area, .theme-pink .page-footer {
+	background-color: #E03997 !important;
+	color: white;
+}
+.theme-pink.light .page-header a, .theme-pink.light .page-footer a{
+	color: #E03997;
+}
+.theme-pink .page-header a, .theme-pink .page-footer a{
+	color: white;
+}
+
+/*--- Brown ---*/
+
+.theme-brown .page-header, .theme-brown .nav-area, .theme-brown .page-footer {
+	background-color: #A5673F !important;
+	color: white;
+}
+.theme-brown.light .page-header a, .theme-brown.light .page-footer a{
+	color: #A5673F;
+}
+.theme-brown .page-header a, .theme-brown .page-footer a{
+	color: white;
+}
+
+/*--- Grey ---*/
+
+.theme-grey .page-header, .theme-grey .nav-area, .theme-grey .page-footer {
+	background-color: #767676 !important;
+	color: white;
+}
+.theme-grey.light .page-header a, .theme-grey.light .page-footer a{
+	color: white;
+}
+.theme-grey .page-header a, .theme-grey .page-footer a{
+	color: white;
+}
+
+/*--- White ---*/
+
+.theme-white .page-header, .theme-white .nav-area, .theme-white .page-footer {
+	background-color: white !important;
+}
+.theme-white .page-header a, .theme-white .page-footer a{
+	color: black;
+}
+
+.theme-white .page-header, .theme-white .page-footer{
+	color: black;
+}
+
+
+
+
+/* LIGHT VERSIONS */
+
+
+.theme-red.light .page-header,  .theme-red.light .page-footer {
+  background-color: #FFE8E6 !important;
+  color: hsl(0, 71%, 51%);
+}
+
+.theme-orange.light .page-header,  .theme-orange.light .page-footer {
+  background-color: #FFEDDE !important;
+  color: #F2711C;
+}
+
+.theme-yellow.light .page-header,  .theme-yellow.light .page-footer {
+  background-color: #FFF8DB !important;
+  color: #B58105;
+}
+
+.theme-olive.light .page-header,  .theme-olive.light .page-footer {
+  background-color: #FBFDEF !important;
+  color: #8ABC1E;
+}
+
+.theme-green.light .page-header,  .theme-green.light .page-footer {
+  background-color: #E5F9E7 !important;
+  color: #1EBC30;
+}
+
+.theme-teal.light .page-header,  .theme-teal.light .page-footer {
+  background-color: #E1F7F7 !important;
+  color: #10A3A3;
+}
+
+.theme-blue.light .page-header,  .theme-blue.light .page-footer {
+  background-color: #DFF0FF !important;
+  color: #2185D0;
+}
+
+.theme-violet.light .page-header,  .theme-violet.light .page-footer {
+  background-color: #EAE7FF !important;
+  color: #6435C9;
+}
+
+.theme-purple.light .page-header,  .theme-purple.light .page-footer {
+  background-color: #F6E7FF !important;
+  color: #A333C8;
+}
+
+.theme-pink.light .page-header,  .theme-pink.light .page-footer {
+  background-color: #FFE3FB !important;
+  color: #E03997;
+}
+
+.theme-brown.light .page-header,  .theme-brown.light .page-footer {
+  background-color: #F1E2D3 !important;
+  color: #A5673F;
+}
+
+
+.theme-red.light .nav-area {
+	background-color: #DB2828 !important;
+}
+
+.theme-orange.light .nav-area {
+	background-color: #F2711C !important;
+}
+
+.theme-olive.light .nav-area {
+	background-color: #B5CC18 !important;
+}
+
+.theme-yellow.light .nav-area {
+	background-color: #FBBD08 !important;
+}
+
+.theme-green.light .nav-area {
+	background-color: #21BA45 !important;
+}
+
+.theme-teal.light .nav-area {
+	background-color: #00B5AD !important;
+}
+
+.theme-blue.light .nav-area {
+	background-color: #2185D0 !important;
+}
+
+.theme-violet.light .nav-area {
+	background-color: #6435C9 !important;
+}
+
+.theme-purple.light .nav-area {
+	background-color: #A333C8 !important;
+}
+
+.theme-pink.light .nav-area {
+	background-color: #E03997 !important;
+}
+
+.theme-brown.light .nav-area {
+	background-color: #A5673F !important;
+}
+
+.theme-grey.light .nav-area {
+	background-color: #767676 !important;
+}
+
+.theme-white.light .nav-area {
+	background-color: white !important;
+}
+
+.theme-white.light .page-header a, .theme-white.light .page-footer a{
+	color: black;
+}
+
+
+
+
+.theme-blue .borderline {
+	border-color: #2185D0 !important;
+}
+
+
+
+.actappsite-content-border {
+  padding: 0px 8px 8px 8px !important;
+}
+.actappsite-sidebar-border {
+  padding: 0px 8px 8px 0px !important;
+}
+
+.actappsite-content-border.sitepad0 {
+  padding-right: 0px !important;
+}
+.actappsite-content-border.sitepad1 {
+  padding-right: 1px !important;
+}
+.actappsite-content-border.sitepad2 {
+  padding-right: 2px !important;
+}
+.actappsite-content-border.sitepad3 {
+  padding-right: 3px !important;
+}
+.actappsite-content-border.sitepad4 {
+  padding-right: 4px !important;
+}
+.actappsite-content-border.sitepad5 {
+  padding-right: 5px !important;
+}
+.actappsite-content-border.sitepad6 {
+  padding-right: 6px !important;
+}
+.actappsite-content-border.sitepad7 {
+  padding-right: 7px !important;
+}
+.actappsite-content-border.sitepad8 {
+  padding-right: 8px !important;
+}
+.actappsite-content-border.sitepad9 {
+  padding-right: 9px !important;
+}
+.actappsite-content-border.sitepad10 {
+  padding-right: 10px !important;
+}
+.actappsite-content-border.sitepad15 {
+  padding-right: 15px !important;
+}
+.actappsite-content-border.sitepad20 {
+  padding-right: 20px !important;
+}
+
+
+@media screen and (max-width: 782px){
+  .actappsite-content-border {
+    padding: 10px !important;
+  }
+  .actappsite-sidebar-border {
+    padding: 10px !important;
+  }
+}
+
+.flex-center-container {
+  display: table;
+}
+
+.flex-center-child {
+  display: table-cell;
+  text-align: center; /* Centers text Horizontally */
+  vertical-align: middle; /* Centers text Vertically */
+}
+
+
