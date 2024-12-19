@@ -102,13 +102,20 @@ $themeColors = ActAppThemeOptions::get_theme_colors();
 $themeColor = $themeColors['maincolor'];
 $themeInvert = $themeColors['inverted'];
 
+//--- ToDo
+$themeIsFull = get_theme_mod('actappstd_full_content');
+$themeFrameClasses = 'full-container-wide';
+if( $themeIsFull !== true ){
+	$themeFrameClasses = 'full-container container';
+}
+
 $themeClasses = 'theme' . '-' . $themeColor . ' ' . $themeInvert ;
 wp_body_open();
 ?>
 
 <div id="page" class="pusher bootstrap-wrapper <?php echo($themeClasses); ?>">
 	<?php get_template_part( 'template-parts/header/site-header' ); ?>
-	<div class="hgroup full-container container">
+	<div class="hgroup <?php echo $themeFrameClasses ?>">
 	<div id="content" class="site-content">
 		<div id="primary" class="content-area">			
 			

@@ -111,6 +111,7 @@ class ActAppThemeOptions
 		$wp_customize->add_setting('actappstd_show_sidebar', array('default' => true));
 
 		//--- Site Border Options
+		$wp_customize->add_setting('actappstd_full_content', array('default' => false));
 		$wp_customize->add_setting('actappstd_segmented_content', array('default' => true));
 		$wp_customize->add_setting('actappstd_segmented_sidebar', array('default' => true));
 		$wp_customize->add_setting('actappstd_segmented_theme_color', array('default' => true));
@@ -185,7 +186,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_show_header',
 				array(
-					'label'          => __('Include header on pages (except home)?', '_s'),
+					'label'          => __('Include header on pages (except home)', '_s'),
 					'section' => 'actapp-site-header',
 					'settings'       => 'actappstd_show_header',
 					'type'           => 'checkbox'
@@ -198,7 +199,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_header_underlined',
 				array(
-					'label'          => __('Show line under page headers?', '_s'),
+					'label'          => __('Show line under page headers', '_s'),
 					'section' => 'actapp-site-header',
 					'settings'       => 'actappstd_header_underlined',
 					'type'           => 'checkbox'
@@ -244,7 +245,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_show_sidebar',
 				array(
-					'label'          => __('Show sidebar by default?', '_s'),
+					'label'          => __('Show sidebar by default', '_s'),
 					'section' => 'actapp-site-layout',
 					'settings'       => 'actappstd_show_sidebar',
 					'type'           => 'checkbox'
@@ -312,13 +313,26 @@ class ActAppThemeOptions
 			)
 		);
 
+		
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'actappstd_full_content',
+				array(
+					'label'          => __('Use full screen', '_s'),
+					'section' => 'actapp-site-layout',
+					'settings'       => 'actappstd_full_content',
+					'type'           => 'checkbox'
+				)
+			)
+		);
 
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
 				'actappstd_segmented_content',
 				array(
-					'label'          => __('Border content area?', '_s'),
+					'label'          => __('Border content area', '_s'),
 					'section' => 'actapp-site-layout',
 					'settings'       => 'actappstd_segmented_content',
 					'type'           => 'checkbox'
@@ -330,7 +344,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_segmented_sidebar',
 				array(
-					'label'          => __('Border sidebar area?', '_s'),
+					'label'          => __('Border sidebar area', '_s'),
 					'section' => 'actapp-site-layout',
 					'settings'       => 'actappstd_segmented_sidebar',
 					'type'           => 'checkbox'
@@ -342,7 +356,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_segmented_theme_color',
 				array(
-					'label'          => __('Add line at top of Borders?', '_s'),
+					'label'          => __('Add line at top of Borders', '_s'),
 					'section' => 'actapp-site-layout',
 					'settings'       => 'actappstd_segmented_theme_color',
 					'type'           => 'checkbox'
@@ -357,7 +371,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_hide_login',
 				array(
-					'label'          => __('Hide Login Link?', '_s'),
+					'label'          => __('Hide Login Link', '_s'),
 					'section' => 'actapp-site-layout',
 					'settings'       => 'actappstd_hide_login',
 					'type'           => 'checkbox'
@@ -373,7 +387,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'inverted_theme',
 				array(
-					'label'          => __('Light or Dark?', '_s'),
+					'label'          => __('Light or Dark', '_s'),
 					'section' => 'actapp-theme-color',
 					'settings'       => 'inverted_theme',
 					'type'           => 'radio',

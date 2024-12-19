@@ -33,6 +33,12 @@ This theme, like WordPress, is licensed under the GPL.
   margin-top:40px;
 }
 
+.full-container-wide {
+  margin-left:10px;
+  margin-right:10px;
+}
+
+
 .ui.sidebar.overlay.pad0.left.uncover.visible {
   background-color: black;
 }

@@ -23,9 +23,21 @@
 		$inverted = ' inverted ';
 	}
 	
+	//--- ToDo
+//$themeLayout = ActAppThemeOptions::get_theme_layout();
+// $themeFrameClasses = '';
+// $themeFrameClasses = 'full-container';
+
+$themeIsFull = get_theme_mod('actappstd_full_content');
+$themeFrameClasses = 'full-container-wide';
+if( $themeIsFull !== true ){
+	$themeFrameClasses = 'full-container';
+}
+
+
 	?>
 	<div class="nav-area noprint">
-	<nav class="full-container">
+	<nav class="<?php echo $themeFrameClasses ?>">
     <div class="ui <?php echo $inverted . ' ' . $colorThemeSetting ?> horizontal top menu">
 	
 	<?php
