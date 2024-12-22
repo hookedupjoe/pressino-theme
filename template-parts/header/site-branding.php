@@ -7,11 +7,17 @@
  */
 
 
+ $themeIsFull = get_theme_mod('actappstd_full_content');
+ $themeFrameClasses = 'full-container-wide';
+ if( $themeIsFull !== true ){
+   $themeFrameClasses = 'full-container container';
+ }
+
 ?>
 
 <div class="site-branding-header">
   <div id="masthead" class="page-header">
-    <div class="hgroup full-container ">
+    <div class="<?php echo($themeFrameClasses); ?>">
 
     <?php if ( is_active_sidebar( 'sidebar-h' ) ) {?>
       <?php dynamic_sidebar( 'sidebar-h' ); ?>

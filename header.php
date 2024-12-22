@@ -102,7 +102,6 @@ $themeColors = ActAppThemeOptions::get_theme_colors();
 $themeColor = $themeColors['maincolor'];
 $themeInvert = $themeColors['inverted'];
 
-//--- ToDo
 $themeIsFull = get_theme_mod('actappstd_full_content');
 $themeFrameClasses = 'full-container-wide';
 if( $themeIsFull !== true ){
