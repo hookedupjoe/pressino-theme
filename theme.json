@@ -1,0 +1,78 @@
+{
+	"version": 2,
+	"settings": {
+        "color": {
+			"defaultDuotone": false,
+			"defaultGradients": false,
+			"defaultPalette": false,
+			"palette": [
+				{
+					"color": "#FFFFFF",
+					"name": "Base",
+					"slug": "base"
+				},
+				{
+					"color": "#111111",
+					"name": "Contrast",
+					"slug": "contrast"
+				},
+				{
+					"color": "#DB2828",
+					"name": "Red",
+					"slug": "red"
+				},
+				{
+					"color": "#F2711C",
+					"name": "Orange",
+					"slug": "Orange"
+				},
+				{
+					"color": "#B5CC18",
+					"name": "Olive",
+					"slug": "olive"
+				},
+				{
+					"color": "#FBBD08",
+					"name": "Yellow",
+					"slug": "yellow"
+				},
+				{
+					"color": "#21BA45",
+					"name": "Green",
+					"slug": "green"
+				},
+				{
+					"color": "#00B5AD",
+					"name": "Teal",
+					"slug": "teal"
+				},
+				{
+					"color": "#2185D0",
+					"name": "Blue",
+					"slug": "blue"
+				},
+				{
+					"color": "#6435C9",
+					"name": "Violet",
+					"slug": "violet"
+				},
+				{
+					"color": "#A333C8",
+					"name": "Purple",
+					"slug": "purple"
+				},
+				{
+					"color": "#A5673F",
+					"name": "Brown",
+					"slug": "brown"
+				}
+			]
+		},
+		"typography": {
+			"fontSizes": null
+		}
+    },
+	"styles": null,
+	"variables": null,
+	"presets": null
+}
