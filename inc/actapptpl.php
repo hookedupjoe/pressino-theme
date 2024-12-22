@@ -51,9 +51,9 @@ class ActAppTpl {
 			}
 		}
 
-		$tmpRet .= '<div class="'.$tmpClasses.'">';
+		$tmpRet .= '<h2 class="'.$tmpClasses.'">';
 		$tmpRet .= $theText;
-		$tmpRet .= '</div>';
+		$tmpRet .= '</h2>';
 		
 		return $tmpRet;
 	}
