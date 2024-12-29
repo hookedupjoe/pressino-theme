@@ -4,6 +4,40 @@
 Theme Wordpress Widget CSS
 */
 
+
+/* COLOR THEMES - OVERRIDING WITH FILTER */
+.has-red-color.has-inline-color, .has-red-color.has-text-color {
+	color: #DB2828;
+}
+.has-orange-color.has-inline-color, .has-orange-color.has-text-color {
+	color: #F2711C;
+}
+.has-olive-color.has-inline-color, .has-olive-color.has-text-color {
+	color: #B5CC18;
+}
+.has-yellow-color.has-inline-color, .has-yellow-color.has-text-color {
+	color: #FBBD08;
+}
+.has-green-color.has-inline-color, .has-green-color.has-text-color {
+	color: #21BA45;
+}
+.has-teal-color.has-inline-color, .has-teal-color.has-text-color {
+	color: #00B5AD;
+}
+.has-blue-color.has-inline-color, .has-blue-color.has-text-color {
+	color: #2185D0;
+}
+.has-violet-color.has-inline-color, .has-violet-color.has-text-color {
+	color: #6435C9;
+}
+.has-purple-color.has-inline-color, .has-purple-color.has-text-color {
+	color: #A333C8;
+}
+.has-brown-color.has-inline-color, .has-brown-color.has-text-color {
+	color: #A5673F;
+}
+
+
 /* Formatting to help out of ox widgets look better */
 
 .wp-block-quote {

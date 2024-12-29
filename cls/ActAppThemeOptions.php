@@ -517,6 +517,83 @@ class ActAppThemeOptions
 
 	}
 
+	public static function filter_theme_json( $theme_json ){
+		$new_data = array(
+			'version'  => 2,
+			'settings' => array(
+				'color' => array(
+					'defaultPalette' => false,
+					'palette' => array(
+						array(
+							'slug'  => 'base',
+							'color' => '#FFFFFF',
+							'name'  => __( 'Base', 'text-domain' ),
+						),
+						array(
+							'slug'  => 'contrast',
+							'color' => '#111111',
+							'name'  => __( 'Contrast', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'red',
+							'color'	=> '#DB2828',
+							'name'	=> __('Red', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'orange',
+							'color'	=> '#F2711C',
+							'name'	=> __('Orange', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'olive',
+							'color'	=> '#B5CC18',
+							'name'	=> __('Olive', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'yellow',
+							'color'	=> '#FBBD08',
+							'name'	=> __('Yellow', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'green',
+							'color'	=> '#21BA45',
+							'name'	=> __('Green', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'teal',
+							'color'	=> '#00B5AD',
+							'name'	=> __('Teal', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'blue',
+							'color'	=> '#2185D0',
+							'name'	=> __('Blue', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'violet',
+							'color'	=> '#6435C9',
+							'name'	=> __('Violet', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'purple',
+							'color'	=> '#A333C8',
+							'name'	=> __('Purple', 'text-domain' ),
+						),
+						array(
+							'slug'	=> 'brown',
+							'color'	=> '#A5673F',
+							'name'	=> __('Brown', 'text-domain' ),
+						),
+						
+					),
+				),
+			),
+		);
+	
+		return $theme_json->update_with( $new_data );
+	}
+
+
 	public static function init()
 	{
 		global $ActAppThemeOptions;
@@ -525,6 +602,7 @@ class ActAppThemeOptions
 		self::setup_widget_access();
 		add_filter('allowed_block_types_all', array('ActAppThemeOptions', 'allowed_block_types'), 10, 2);
 		add_filter('should_load_remote_block_patterns', '__return_false');
+		add_filter( 'wp_theme_json_data_theme', array('ActAppThemeOptions', 'filter_theme_json') );
 	}
 }
 add_action('init', array('ActAppThemeOptions', 'init'));
