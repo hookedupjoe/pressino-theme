@@ -4,6 +4,32 @@
 Theme Wordpress Widget CSS
 */
 
+.editor-post-title__block, #page .editor-post-title__block, #wpbody .editor-post-title__block{
+  font-size:16px !important;
+}
+  
+:root, :root #page, :root #wpbody {
+  --wp--preset--font-size--default: 16px !important;
+  --wp--preset--font-size--small: 14px !important;
+  --wp--preset--font-size--medium: 17px !important;
+  --wp--preset--font-size--large: 19px !important;
+  --wp--preset--font-size--x-large: 21px !important;
+}
+
+/* FONT SIZES - OVERRIDING WITH FILTER */
+#page .has-small-font-size, #wpbody .has-small-font-size {
+  font-size:var(--wp--preset--font-size--small) !important;
+}
+#page .has-medium-font-size, #wpbody .has-medium-font-size {
+  font-size:var(--wp--preset--font-size--medium) !important;
+}
+#page .has-large-font-size, #wpbody .has-large-font-size {
+  font-size:var(--wp--preset--font-size--large) !important;
+}
+#page .has-x-large-font-size, #wpbody .has-x-large-font-size {
+  font-size:var(--wp--preset--font-size--x-large) !important;
+}
+
 
 /* COLOR THEMES - OVERRIDING WITH FILTER */
 .has-red-color.has-inline-color, .has-red-color.has-text-color {

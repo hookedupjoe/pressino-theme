@@ -1,6 +1,39 @@
 {
 	"version": 2,
 	"settings": {
+		"typography": {
+			"fontFamilies": [{
+				"name": "Primary",
+				"slug": "primary",
+				"fontFamily": "Roboto, 'Bitstream Charter', 'Sitka Text', Cambria, serif"
+			},
+			{
+				"name": "Secondary",
+				"slug": "secondary",
+				"fontFamily": "system-ui, sans-serif"
+			}],
+			"fontSizes": [{
+				"name": "Small",
+				"slug": "small",
+				"size": "13px"
+			},
+			{
+				"name": "Medium",
+				"slug": "medium",
+				"size": "20px"
+			},
+			{
+				"name": "Large",
+				"slug": "large",
+				"size": "36px"
+			},
+			{
+				"name": "Extra Large",
+				"slug": "x-large",
+				"size": "42px"
+			}]
+		}
+    },
         "color": {
 			"defaultDuotone": false,
 			"defaultGradients": false,
@@ -71,38 +104,6 @@
 		"layout": {
 			"contentSize": "800px",
 			"wideSize": "1000px"
-		},
-		"typography": {
-			"fontFamilies": [{
-				"name": "Primary",
-				"slug": "primary",
-				"fontFamily": "Roboto, 'Bitstream Charter', 'Sitka Text', Cambria, serif"
-			},
-			{
-				"name": "Secondary",
-				"slug": "secondary",
-				"fontFamily": "system-ui, sans-serif"
-			}],
-			"fontSizes": [{
-				"name": "Small",
-				"slug": "small",
-				"size": "13px"
-			},
-			{
-				"name": "Medium",
-				"slug": "medium",
-				"size": "20px"
-			},
-			{
-				"name": "Large",
-				"slug": "large",
-				"size": "36px"
-			},
-			{
-				"name": "Extra Large",
-				"slug": "x-large",
-				"size": "42px"
-			}]
 		}
-    }
+		
 }

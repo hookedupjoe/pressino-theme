@@ -8,7 +8,7 @@ Author: hookedup, inc.
 Author URI: https://hookedup.com/
 Description: Description: A theme for Pressino based websites.
 
-Version: 2.0.6
+Version: 2.0.7
 Tested up to: 6.0
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -19,14 +19,16 @@ Tags: pressino, wordpress development, blocks, action-app, actionapp-wp, semanti
 This theme, like WordPress, is licensed under the GPL.
 */
 
-
+body {
+  font-size: 16px;
+}
 #page {
   width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
 	font-family: Roboto, arial, helvetica, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 #page.fixedmenu {

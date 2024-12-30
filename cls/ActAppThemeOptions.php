@@ -521,6 +521,32 @@ class ActAppThemeOptions
 		$new_data = array(
 			'version'  => 2,
 			'settings' => array(
+				'typography' => array(
+
+					'fontSize' => '16px',
+					'fontSizes' => array(
+						array(
+							'name' => 'Small',
+							'sulg' => 'small',
+							'size' => '14px',
+						),
+						array(
+							'name' => 'Medium',
+							'sulg' => 'medium',
+							'size' => '17px',
+						),
+						array(
+							'name' => 'Large',
+							'sulg' => 'large',
+							'size' => '19px',
+						),
+						array(
+							'name' => 'Extra Large',
+							'sulg' => 'x-large',
+							'size' => '21px',
+						),
+					)
+				),
 				'color' => array(
 					'defaultPalette' => false,
 					'palette' => array(
@@ -585,7 +611,8 @@ class ActAppThemeOptions
 							'name'	=> __('Brown', 'text-domain' ),
 						),
 						
-					),
+					)
+					
 				),
 			),
 		);
