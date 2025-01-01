@@ -102,19 +102,19 @@ class ActAppThemeOptions
 		$wp_customize->add_setting('inverted_theme', array('default' => 'light'));
 
 		//--- Header Options
-		$wp_customize->add_setting('actappstd_show_header', array('default' => true));
+		$wp_customize->add_setting('actappstd_show_header', array('default' => false));
 		$wp_customize->add_setting('actappstd_header_color', array('default' => 'default'));
 		$wp_customize->add_setting('actappstd_header_size', array('default' => 'large'));
 		$wp_customize->add_setting('actappstd_header_underlined', array('default' => false));
 
 		//--- Sidebar Options
-		$wp_customize->add_setting('actappstd_show_sidebar', array('default' => true));
+		$wp_customize->add_setting('actappstd_show_sidebar', array('default' => false));
 
 		//--- Site Border Options
 		$wp_customize->add_setting('actappstd_full_content', array('default' => false));
-		$wp_customize->add_setting('actappstd_segmented_content', array('default' => true));
-		$wp_customize->add_setting('actappstd_segmented_sidebar', array('default' => true));
-		$wp_customize->add_setting('actappstd_segmented_theme_color', array('default' => true));
+		$wp_customize->add_setting('actappstd_segmented_content', array('default' => false));
+		$wp_customize->add_setting('actappstd_segmented_sidebar', array('default' => false));
+		$wp_customize->add_setting('actappstd_segmented_theme_color', array('default' => false));
 
 		$wp_customize->add_setting('actappstd_content_padding', array('default' => 'pad8'));
 		$wp_customize->add_setting('actappstd_sidebar_padding', array('default' => 'pad0'));
@@ -299,15 +299,14 @@ class ActAppThemeOptions
 						'sitepad0' => '0px',
 						'sitepad1' => '1px',
 						'sitepad2' => '2px',
-						'sitepad3' => '4px',
-						'sitepad4' => '5px',
-						'sitepad6' => '7px',
-						'sitepad7' => '8px',
+						'sitepad3' => '3px',
+						'sitepad4' => '4px',
+						'sitepad5' => '5px',
+						'sitepad6' => '6px',
+						'sitepad7' => '7px',
 						'sitepad8' => '8px',
 						'sitepad9' => '9px',
 						'sitepad10' => '10px',
-						'sitepad15' => '15px',
-						'sitepad20' => '20px',
 					)
 				)
 			)
@@ -319,7 +318,7 @@ class ActAppThemeOptions
 				$wp_customize,
 				'actappstd_full_content',
 				array(
-					'label'          => __('Use full screen', '_s'),
+					'label'          => __('Use wide screen (1400)', '_s'),
 					'section' => 'actapp-site-layout',
 					'settings'       => 'actappstd_full_content',
 					'type'           => 'checkbox'

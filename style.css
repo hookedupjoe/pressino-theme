@@ -8,7 +8,7 @@ Author: hookedup, inc.
 Author URI: https://hookedup.com/
 Description: Description: A theme for Pressino based websites.
 
-Version: 2.0.7
+Version: 2.0.7a
 Tested up to: 6.0
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -35,11 +35,6 @@ body {
   margin-top:40px;
 }
 
-.full-container-wide {
-  margin-left:10px;
-  margin-right:10px;
-}
-
 
 .ui.sidebar.overlay.pad0.left.uncover.visible {
   background-color: black;
@@ -49,6 +44,13 @@ body {
   cursor: pointer;
 }
 
+
+#page .full-container-wide {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
 #page .full-container {
   max-width: 1080px;
   margin-left: auto;
@@ -75,10 +77,10 @@ body {
   border-top:1px solid;
 }
 
-.page-footer .full-container {
+.page-footer .full-container, .page-footer .full-container-wide {
   padding: 10px;
-  
 }
+
 .ui.cards.sidecards div.image>img {
   min-height:75px;
 }
@@ -98,7 +100,7 @@ body.admin-bar.kodeo-ui-active .ui.top.fixed.menu {
   margin-right: 5px;
 }
 
-.hgroup.full-container.container {
+.hgroup.full-container.container, .hgroup.full-container-wide.container {
   padding: 0 10px 0 10px;
 }
 

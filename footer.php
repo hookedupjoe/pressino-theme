@@ -7,7 +7,7 @@
 
 
 $themeIsFull = get_theme_mod('actappstd_full_content');
-$themeFrameClasses = 'full-container-wide';
+$themeFrameClasses = 'full-container-wide container';
 if( $themeIsFull !== true ){
 	$themeFrameClasses = 'full-container container';
 }
