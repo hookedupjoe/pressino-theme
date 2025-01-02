@@ -114,11 +114,12 @@ class ActAppThemeOptions
 		$wp_customize->add_setting('actappstd_full_content', array('default' => false));
 		$wp_customize->add_setting('actappstd_segmented_content', array('default' => false));
 		$wp_customize->add_setting('actappstd_segmented_sidebar', array('default' => false));
-		$wp_customize->add_setting('actappstd_segmented_theme_color', array('default' => false));
+		// $wp_customize->add_setting('actappstd_segmented_theme_color', array('default' => false));
 
 		$wp_customize->add_setting('actappstd_content_padding', array('default' => 'pad8'));
 		$wp_customize->add_setting('actappstd_sidebar_padding', array('default' => 'pad0'));
-		$wp_customize->add_setting('actappstd_sidebar_spacing', array('default' => 'sitepad8'));
+		$wp_customize->add_setting('actappstd_sidebar_size', array('default' => '3'));
+		$wp_customize->add_setting('actappstd_sidebar_spacing', array('default' => ''));
 
 		//--- Other Site Options
 		$wp_customize->add_setting('actappstd_disabled_widgets', array('default' => ''));
@@ -285,6 +286,27 @@ class ActAppThemeOptions
 			)
 		);
 
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'actappstd_sidebar_size',
+				array(
+					'label'          => __('Sidebar Width', '_s'),
+					'section' => 'actapp-site-layout',
+					'settings'       => 'actappstd_sidebar_size',
+					'type'    => 'select',
+					'choices' => array(
+						'3' => '15%',
+						'4' => '20%',
+						'5' => '25%',
+						'6' => '30%',
+						'7' => '35%',
+						'8' => '40%',
+					)
+				)
+			)
+		);
+
 
 		$wp_customize->add_control(
 			new WP_Customize_Control(
@@ -296,17 +318,11 @@ class ActAppThemeOptions
 					'settings'       => 'actappstd_sidebar_spacing',
 					'type'    => 'select',
 					'choices' => array(
-						'sitepad0' => '0px',
-						'sitepad1' => '1px',
-						'sitepad2' => '2px',
-						'sitepad3' => '3px',
-						'sitepad4' => '4px',
-						'sitepad5' => '5px',
-						'sitepad6' => '6px',
-						'sitepad7' => '7px',
-						'sitepad8' => '8px',
-						'sitepad9' => '9px',
-						'sitepad10' => '10px',
+						'' => 'Default',
+						'nospace' => 'None',
+						'slimspace' => 'Slim',
+						'widespace' => 'Wide',
+						'xwidespace' => 'Extra Wide',
 					)
 				)
 			)
@@ -350,18 +366,18 @@ class ActAppThemeOptions
 				)
 			)
 		);
-		$wp_customize->add_control(
-			new WP_Customize_Control(
-				$wp_customize,
-				'actappstd_segmented_theme_color',
-				array(
-					'label'          => __('Add line at top of Borders', '_s'),
-					'section' => 'actapp-site-layout',
-					'settings'       => 'actappstd_segmented_theme_color',
-					'type'           => 'checkbox'
-				)
-			)
-		);
+		// $wp_customize->add_control(
+		// 	new WP_Customize_Control(
+		// 		$wp_customize,
+		// 		'actappstd_segmented_theme_color',
+		// 		array(
+		// 			'label'          => __('Add line at top of Borders', '_s'),
+		// 			'section' => 'actapp-site-layout',
+		// 			'settings'       => 'actappstd_segmented_theme_color',
+		// 			'type'           => 'checkbox'
+		// 		)
+		// 	)
+		// );
 
 
 

@@ -60,15 +60,31 @@ class ActAppTpl {
 
 	public static function showContentHeader($thePageType = ''){
 		$themeColor = get_theme_mod( 'color_theme' );
-		$themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+		// $themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
 		$themeShowHeader = get_theme_mod( 'actappstd_show_header' );
 		$tmpShowSegment = get_theme_mod( 'actappstd_segmented_content' );
 		$themeContentPadding = get_theme_mod( 'actappstd_content_padding' );
 		$themeSidebarSpacing = get_theme_mod( 'actappstd_sidebar_spacing' );
+		$themeSidebarSize = get_theme_mod( 'actappstd_sidebar_size' );
 		
+		if( $themeSidebarSize == ''){
+			$themeSidebarSize = '6';
+		}
+
+		$themeSidebarSizeNum = (int)$themeSidebarSize;
+		$themeContentBodySize = 20 - $themeSidebarSizeNum;
+
+
 		$tmpShowSidebar = true;
-		$themeContentBodySizeMed = '9';
-		$themeContentSidebarSizeMed = '3';
+		// $themeContentBodySize = '7';
+		// if( $themeSidebarSize == '1' ){
+		// 	$themeContentBodySize = '9';
+		// } else if( $themeSidebarSize == '2' ){
+		// 	$themeContentBodySize = '8';
+		// } else if( $themeSidebarSize == '4' ){
+		// 	$themeContentBodySize = '6';
+		// }
+		
 		
 		
 		if( $thePageType == 'full'  || $thePageType == 'blank' ){
@@ -89,18 +105,20 @@ class ActAppTpl {
 			//--- Really use a segment but do not include the line, 
 			//    this assures everything works the same, including site padding
 			$tmpClassesSeg .= ' basic';
-		} else {
-			if( $themeSegmentUseColor ){
-				$tmpClassesSeg .= ' '. $themeColor;
-			}
+		// } else {
+		// 	if( $themeSegmentUseColor ){
+		// 		$tmpClassesSeg .= ' '. $themeColor;
+		// 	}
 		}
-
-
-		$tmpClasses = ' col-md-'. $themeContentBodySizeMed.' '.$themeSidebarSpacing;
+		
+		$tmpSpacing = ' flo-flex-' . $themeContentBodySize;
+		// $tmpClasses = ' col-md-'. $themeContentBodySizeMed.' '.$themeSidebarSpacing;
+		$tmpClasses = 'flo-main' . $tmpSpacing;
 		
 		$tmpRet = '';
-		$tmpRet .= '<div class="row">'; 
-		$tmpRet .= '  <div style="display: flex;" class="col-sm-12 actappsite-content-border '.$tmpClasses.'">'; 
+		$tmpRet .= '<div class="flo-wrap ' . $themeSidebarSpacing . '">'; 
+		//actappsite-content-border 
+		$tmpRet .= '  <div style="display: flex;" class="'.$tmpClasses.'">'; 
 
 		//if( $tmpShowSegment ){
 			$tmpRet .= '<div style="flex-grow: 1;" class="ui segment '.$tmpClassesSeg.'">'; 
@@ -116,11 +134,16 @@ class ActAppTpl {
 
 	public static function showContenSidebar($thePageType = ''){
 		$themeColor = get_theme_mod( 'color_theme' );
-		$themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+		// $themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
 
 		$themeSegContent = get_theme_mod( 'actappstd_segmented_content' );
 		$themeSegSidebar = get_theme_mod( 'actappstd_segmented_sidebar' );
-		$themeSegColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+		// $themeSegColor = get_theme_mod( 'actappstd_segmented_theme_color' );
+		$themeSidebarSize = get_theme_mod( 'actappstd_sidebar_size' );
+
+		if( $themeSidebarSize == '' ){
+			$themeSidebarSize = '6';
+		}
 
 		$tmpShowSidebar = true;
 		$themeContentPadding = get_theme_mod( 'actappstd_sidebar_padding' );
@@ -129,7 +152,12 @@ class ActAppTpl {
 		if( $thePageType == 'full' || $thePageType == 'blank' ){
 			$tmpShowSidebar = false;
 		}
-		$tmpClasses = ' col-md-'. $themeContentSidebarSizeMed;
+
+		$tmpSpacing = ' flo-flex-' . $themeSidebarSize;
+		// $tmpClasses = ' col-md-'. $themeContentBodySizeMed.' '.$themeSidebarSpacing;
+		$tmpClasses = 'flo-side-se' . $tmpSpacing;
+
+		// $tmpClasses = ' col-md-'. $themeContentSidebarSizeMed;
 		
 		
 		$tmpClassesSeg = $themeContentPadding;
@@ -144,17 +172,18 @@ class ActAppTpl {
 			//--- Really use a segment but do not include the line, 
 			//    this assures everything works the same, including site padding
 			$tmpClassesSeg .= ' basic ';
-		} else {
-			if( $themeSegmentUseColor ){
-				$tmpClassesSeg .= ' '. $themeColor;
-			}
+		// } else {
+		// 	if( $themeSegmentUseColor ){
+		// 		$tmpClassesSeg .= ' '. $themeColor;
+		// 	}
 		}
 		//--- End the content area section
 		echo('</div>');
 		
 		//--- If we have a sidebar, add it here
 		if($tmpShowSidebar){
-			echo( '<div style="display: flex;" class="col-sm-12 actappsite-sidebar-border'.$tmpClasses.'">');
+			//actappsite-sidebar-border 
+			echo( '<div style="display: flex;" class="'.$tmpClasses.'">');
 			echo( '  <div style="flex-grow: 1;" class="ui segment '.$tmpClassesSeg.'">');
 			get_sidebar(); 
 			echo( '  </div>');

@@ -108,9 +108,16 @@ body.admin-bar.kodeo-ui-active .ui.top.fixed.menu {
   margin-right: 5px;
 }
 
-.hgroup.full-container.container, .hgroup.full-container-wide.container {
+/* .hgroup.full-container.container, .hgroup.full-container-wide.container {
   padding: 0 10px 0 10px;
 }
+@media all and (max-width: 799px) {
+  .hgroup.full-container.container, .hgroup.full-container-wide.container {
+    padding: 0 7px 0 2px;
+  }
+}
+ */
+
 
 .ui.inverted.horizontal.top.fixed.menu {
   padding-left: 10px;
@@ -517,6 +524,7 @@ theme-black .nav-area {
   padding: 0px 8px 8px 0px !important;
 }
 
+@media all and (min-width: 782px) {
 .actappsite-content-border.sitepad0 {
   padding-right: 0px !important;
 }
@@ -555,6 +563,7 @@ theme-black .nav-area {
 }
 .actappsite-content-border.sitepad20 {
   padding-right: 20px !important;
+}
 }
 
 
