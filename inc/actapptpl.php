@@ -212,7 +212,7 @@ class ActAppTpl {
 		return $ret;
 	}
 	
-	public static function get_mobile_nav_subs($key, $title, $tree){
+	public static function get_mobile_nav_subs($key, $title, $tree, $parentkey = '', $parenttitle = ''){
 		
 		$ret = '<div appuse="cards" group="navtabs" item="menu-'.$key.'" class="hidden">
 		<div class="ui inverted vertical menu top attached fluid">
@@ -221,20 +221,26 @@ class ActAppTpl {
 		Close
 		</a>';
 
-		$ret .= '<div action="selectMe" group="navtabs" item="menu-'.$key.'" class="ui message basic mar0">
-			<i class="folder open outline icon "></i>
-			'.$title.'
-		</div>';
+		//--- No title on the top
+		$ret .= '<div class="ui header small center aligned black inverted pad8 mar0 mart5">' . $title . '</div>';
+		// $ret .= '<div action="selectMe" group="navtabs" item="menu-'.$key.'" class="ui message basic mar0">
+		// 	<i class="folder open outline icon "></i>
+		// 	'.$title.'
+		// </div>';
 
 		$retsubs = '';
-		foreach ( $tree as $key => $obj ) {
+		$retmenus = '';
+		foreach ( $tree as $treekey => $obj ) {
+		
 			$tmpTitle = $obj->title;			
 			$tmpHasChildren = is_array($obj->children) && sizeof($obj->children) > 0;
 			if( $tmpHasChildren ){
-				$ret .= '<div action="selectMe" group="navtabs" item="menu-'.$key.'" class="ui dropdown item" tabindex="0">
-				'.$tmpTitle.'<i class="dropdown icon"></i>
-			</div>';
-			$retsubs .= ''.self::get_mobile_nav_subs($key, $tmpTitle, $obj->children);
+				$ret .= '<div action="selectMe" group="navtabs" item="menu-'.$treekey.'" class="ui dropdown item" tabindex="0">
+				'.$tmpTitle .'<i class="dropdown icon"></i>
+				</div>';
+				$tmpChildMenu = self::get_mobile_nav_subs($treekey, $tmpTitle, $obj->children, $key, $title);
+
+				$retmenus .= ''.$tmpChildMenu;
 			} else {
 				$tmpURL = $obj->url;
 				$ret .= '<a href="'.$tmpURL.'" class="item">';
@@ -243,14 +249,25 @@ class ActAppTpl {
 			}
 		}
 		
-		$ret .= '<a action="selectMe" group="navtabs" item="menu-top" href="javascript:void(0)" class="item">
-		<i class="left arrow icon inverted"></i>
-		Main Menu
-		</a>';
+		if( $parentkey == ''){
+			$ret .= '<a action="selectMe" group="navtabs" item="menu-top" href="javascript:void(0)" class="item">
+			<i class="left arrow icon inverted"></i>
+			Main Menu
+			</a>';
+		} else {
+			$tmpRetTitle = 'Go Back';
+			if( $parenttitle ){
+				$tmpRetTitle = $parenttitle;
+			}
+			$ret .= '<a action="selectMe" group="navtabs" item="menu-' . $parentkey . '" href="javascript:void(0)" class="item">
+			<i class="left arrow icon inverted"></i>
+			' . $tmpRetTitle . '
+			</a>';
+		}
 
 		$ret .= '</div></div>';
 
-		return $ret;
+		return $ret . $retmenus;
 	}
 	
 	public static function get_mobile_nav($tree){
@@ -285,6 +302,11 @@ class ActAppTpl {
 			}
 		}
 	
+
+		$ret .= '<a action="toggleNav" href="javascript:void(0)" class="item">
+		<i class="close icon inverted"></i>
+		Close Menu
+		</a>';
 
 		$ret .= '</div></div>';
 	
