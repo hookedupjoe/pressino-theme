@@ -191,13 +191,19 @@ input.wpcf7-form-control.wpcf7-text.textInput {
   width: 100%;
 }
 
+/* shows in nav / mobile mode only */
+body.admin-bar .ui.sidebar>div {
+  padding-top: 45px;
+}
 body.admin-bar header>div.site-branding {
   margin-top: 32px;
 }
+
 @media screen and (max-width: 782px){
   body.admin-bar header>div.site-branding {
     margin-top: 32px;
   }
+
 }
 
 

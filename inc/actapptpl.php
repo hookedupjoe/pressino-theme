@@ -303,10 +303,10 @@ class ActAppTpl {
 		}
 	
 
-		$ret .= '<a action="toggleNav" href="javascript:void(0)" class="item">
-		<i class="close icon inverted"></i>
-		Close Menu
-		</a>';
+		// $ret .= '<a action="toggleNav" href="javascript:void(0)" class="item">
+		// <i class="close icon inverted"></i>
+		// Close Menu
+		// </a>';
 
 		$ret .= '</div></div>';
 	
