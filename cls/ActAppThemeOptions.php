@@ -100,6 +100,7 @@ class ActAppThemeOptions
 
 		$wp_customize->add_setting('color_theme', array('default' => 'black'));
 		$wp_customize->add_setting('inverted_theme', array('default' => 'light'));
+		$wp_customize->add_setting('inverted_sections', array('default' => false));
 
 		//--- Header Options
 		$wp_customize->add_setting('actappstd_show_header', array('default' => false));
@@ -180,7 +181,6 @@ class ActAppThemeOptions
 
 
 		//----- SITE HEADER CONTROLS
-
 
 		$wp_customize->add_control(
 			new WP_Customize_Control(
@@ -410,6 +410,20 @@ class ActAppThemeOptions
 						'dark'   => __('Dark'),
 						'light'  => __('Light')
 					)
+				)
+			)
+		);
+
+				
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'inverted_sections',
+				array(
+					'label'          => __('Invert Page Content', '_s'),
+					'section' => 'actapp-theme-color',
+					'settings'       => 'inverted_sections',
+					'type'           => 'checkbox'
 				)
 			)
 		);

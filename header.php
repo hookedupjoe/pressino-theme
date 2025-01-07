@@ -108,7 +108,11 @@ if( $themeIsFull !== true ){
 	$themeFrameClasses = 'full-container container';
 }
 
-$themeClasses = 'theme' . '-' . $themeColor . ' ' . $themeInvert ;
+if( $themeColor == 'black' && $themeInvert !== 'light' ){
+	$themeClasses = 'theme-inverted' ;
+} else {
+	$themeClasses = 'theme' . '-' . $themeColor . ' ' . $themeInvert ;
+}
 wp_body_open();
 ?>
 

@@ -8,7 +8,7 @@ Author: hookedup, inc.
 Author URI: https://hookedup.com/
 Description: Description: A theme for Pressino based websites.
 
-Version: 2.0.8b
+Version: 2.0.9
 Tested up to: 6.0
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
@@ -211,6 +211,42 @@ body.admin-bar header>div.site-branding {
 
 
 /*  Semantic UI Theme CSS */
+/* --- Inveted --- */
+
+/* .theme-inverted .page-footer {
+	background-color: #1B1C1D;
+} */
+
+.theme-inverted  {
+	background-color: #1B1C1D !important;
+}
+
+.theme-inverted .page-header, .theme-inverted .nav-area, .theme-inverted .page-footer {
+	background-color: #1B1C1D !important;
+  color: white;
+}
+.theme-inverted .page-header a, .theme-inverted .page-footer a{
+	color: white;
+}
+
+.theme-inverted .ui.inverted.horizontal.top.menu{
+  background-color: black;
+}
+
+.theme-inverted .ui.inverted.menu .active.item {
+  background-color: black;
+  border: solid white 1px;
+  color: #ffffff;
+}
+
+.theme-inverted .nav-area{
+  background-color: black !important;
+}
+.theme-inverted .nav-area{
+  background-color: black !important;
+}
+
+
 
 /*--- Black ---*/
 
@@ -218,7 +254,7 @@ body.admin-bar header>div.site-branding {
 	background-color: black !important;
   color: white;
 }
-theme-black .nav-area {
+.theme-black .nav-area {
 	background-color: #1b1c1d !important;
 }
 

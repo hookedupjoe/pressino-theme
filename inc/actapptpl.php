@@ -59,7 +59,9 @@ class ActAppTpl {
 	}
 
 	public static function showContentHeader($thePageType = ''){
-		$themeColor = get_theme_mod( 'color_theme' );
+		$tmpHideSegment = $thePageType == 'clear';
+		
+		// $themeColor = get_theme_mod( 'color_theme' );
 		// $themeSegmentUseColor = get_theme_mod( 'actappstd_segmented_theme_color' );
 		$themeShowHeader = get_theme_mod( 'actappstd_show_header' );
 		$tmpShowSegment = get_theme_mod( 'actappstd_segmented_content' );
@@ -67,6 +69,10 @@ class ActAppTpl {
 		$themeSidebarSpacing = get_theme_mod( 'actappstd_sidebar_spacing' );
 		$themeSidebarSize = get_theme_mod( 'actappstd_sidebar_size' );
 		
+		// $themeColor = get_theme_mod( 'color_theme' );
+		// $themeInverted = get_theme_mod( 'inverted_theme' );
+		$themeInvertedSections = get_theme_mod( 'inverted_sections' );
+
 		if( $themeSidebarSize == ''){
 			$themeSidebarSize = '6';
 		}
@@ -87,7 +93,7 @@ class ActAppTpl {
 		
 		
 		
-		if( $thePageType == 'full'  || $thePageType == 'blank' ){
+		if( $thePageType == 'full'  || $thePageType == 'blank' || $thePageType == 'clear' ){
 			$tmpShowSidebar = false;
 		}
 		if( !($tmpShowSidebar)){
@@ -96,7 +102,7 @@ class ActAppTpl {
 
 		$tmpClassesSeg = $themeContentPadding;
 
-		if( is_front_page() || $thePageType == 'blank' ){
+		if( is_front_page() || $thePageType == 'blank' || $thePageType == 'clear' ){
 			$themeShowHeader = false;
 		}
 
@@ -110,23 +116,36 @@ class ActAppTpl {
 		// 		$tmpClassesSeg .= ' '. $themeColor;
 		// 	}
 		}
-		
+
+		if( $themeInvertedSections ){
+			$tmpClassesSeg .= ' inverted';
+		}
+
 		$tmpSpacing = ' flo-flex-' . $themeContentBodySize;
 		// $tmpClasses = ' col-md-'. $themeContentBodySizeMed.' '.$themeSidebarSpacing;
 		$tmpClasses = 'flo-main' . $tmpSpacing;
+
+
 		
 		$tmpRet = '';
 		$tmpRet .= '<div class="flo-wrap ' . $themeSidebarSpacing . '">'; 
 		//actappsite-content-border 
 		$tmpRet .= '  <div style="display: flex;" class="'.$tmpClasses.'">'; 
 
-		//if( $tmpShowSegment ){
-			$tmpRet .= '<div style="flex-grow: 1;" class="ui segment '.$tmpClassesSeg.'">'; 
-		//}
+		$tmpClassesSeg = "ui segment ".$tmpClassesSeg;
+
+		if( $tmpHideSegment ){
+			$tmpClassesSeg = "";
+		}
+		$tmpClassesSeg .= " actappstd-content-body";
+		
+		$tmpRet .= '<div style="flex-grow: 1;" class="'.$tmpClassesSeg.'">'; 
+
 		if($themeShowHeader ){
 			$tmpRet .=  self::getHeaderMarkup(get_the_title(),'theme','theme',true);
 			//$tmpRet .= '<div class="ui header large '.$themeColor.'">' . get_the_title() . '</div>'; 
 		}
+		
 
 		echo($tmpRet);
 		return true;
@@ -149,7 +168,7 @@ class ActAppTpl {
 		$themeContentPadding = get_theme_mod( 'actappstd_sidebar_padding' );
 		$themeContentBodySizeMed = '9';
 		$themeContentSidebarSizeMed = '3';
-		if( $thePageType == 'full' || $thePageType == 'blank' ){
+		if( $thePageType == 'full' || $thePageType == 'blank' || $thePageType == 'clear' ){
 			$tmpShowSidebar = false;
 		}
 

@@ -1,5 +1,5 @@
 <?php
-/* Template Name: No Header */ 
+/* Template Name: No Segment or Header */ 
 /**
  * The template for displaying all pages
  *
@@ -14,7 +14,7 @@
  */
 
 get_header();
-$tmpType = 'blank';
+$tmpType = 'clear';
 ActAppTpl::showContentHeader($tmpType);
 
 while ( have_posts() ){
