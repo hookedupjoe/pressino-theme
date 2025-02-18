@@ -391,6 +391,22 @@ function actapptpl_remove_admin_menus() {
 // Removes from post and pages
 add_action('init', 'actapptpl_remove_comment_support', 100);
 
+// Removes from post and pages
+add_action('init', 'actapptpl_check_access', 100);
+
+
+
+function actapptpl_check_access() {
+	$tmpIntranet = get_theme_mod( 'actappstd_exclude_anonymous' );
+	if( !$tmpIntranet ){
+		return;
+	}
+	if(!is_user_logged_in() && !is_login()) {
+		auth_redirect();
+		exit;
+	}
+}
+
 function actapptpl_remove_comment_support() {
     remove_post_type_support( 'post', 'comments' );
     remove_post_type_support( 'page', 'comments' );

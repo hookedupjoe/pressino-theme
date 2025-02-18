@@ -101,6 +101,7 @@ class ActAppThemeOptions
 		$wp_customize->add_setting('color_theme', array('default' => 'black'));
 		$wp_customize->add_setting('inverted_theme', array('default' => 'light'));
 		$wp_customize->add_setting('inverted_sections', array('default' => false));
+		$wp_customize->add_setting('actappstd_exclude_anonymous', array('default' => false));
 
 		//--- Header Options
 		$wp_customize->add_setting('actappstd_show_header', array('default' => false));
@@ -146,6 +147,16 @@ class ActAppThemeOptions
 		);
 
 		//=== Add Sections ================= 
+
+		$wp_customize->add_section(
+			'actapp-theme-general',
+			array(
+				'title' => __('General Site Settings', '_s'),
+				'priority' => 30,
+				'description' => __('Theme general site options.', '_s')
+			)
+		);
+
 
 		$wp_customize->add_section(
 			'actapp-theme-color',
@@ -387,7 +398,7 @@ class ActAppThemeOptions
 				'actappstd_hide_login',
 				array(
 					'label'          => __('Hide Login Link', '_s'),
-					'section' => 'actapp-site-layout',
+					'section' => 'actapp-theme-general',
 					'settings'       => 'actappstd_hide_login',
 					'type'           => 'checkbox'
 				)
@@ -414,7 +425,7 @@ class ActAppThemeOptions
 			)
 		);
 
-				
+						
 		$wp_customize->add_control(
 			new WP_Customize_Control(
 				$wp_customize,
@@ -423,6 +434,18 @@ class ActAppThemeOptions
 					'label'          => __('Invert Page Content', '_s'),
 					'section' => 'actapp-theme-color',
 					'settings'       => 'inverted_sections',
+					'type'           => 'checkbox'
+				)
+			)
+		);
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'actappstd_exclude_anonymous',
+				array(
+					'label'          => __('Intranet (Must be signed in to access site)', '_s'),
+					'section' => 'actapp-theme-general',
+					'settings'       => 'actappstd_exclude_anonymous',
 					'type'           => 'checkbox'
 				)
 			)
